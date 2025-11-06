@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Sampah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="pictures/Logo Bank Sampah.png" alt="Logo Bank Sampah">
+    </div>
+    <nav class="nav-links">
+      <a href="user.html">User</a>
+      <a href="#features">Setor Sampah</a>
+      <a href="#features">Points & Rewards</a>
+    </nav>
+    <div class="auth-links">
+  <a href="register.html">Daftar</a>
+  <a href="login.html">Masuk</a>
+</div>
+  </header>
+
+  <!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Kelola sampah lebih mudah, transparan, dan bermanfaat</h1>
+    <p>Mau dapatkan poinmu sebanyak mungkin? Yuk mulai bantu lingkungan sekarang!</p>
+    <a href="#cta" class="btn">Mulai Membantu Lingkungan</a>
+  </div>
+  <img src="pictures/Pria Membuang Sampah Plastik untuk Daur Ulang.png" alt="Ilustrasi Bank Sampah">
+</section>
+
+  <!-- STATISTICS -->
+  <section class="stats">
+    <div class="stat-box">
+      <h3>Total produksi sampah</h3>
+      <p class="stat-value">120 Kg</p>
+      <p>Jumlah sampah yang berhasil terkumpul.</p>
+    </div>
+    <div class="stat-box">
+      <h3>Total lokasi bank sampah</h3>
+      <p class="stat-value">1.024</p>
+      <p>Lokasi bank sampah di sekitarmu</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>ABOUT US</h2>
+    <p>Bank Sampah Pintar hadir sebagai solusi untuk mengubah sampah menjadi sesuatu yang bernilai. 
+      Melalui sistem digital yang mudah digunakan, masyarakat dapat menabung sampah, mendapatkan poin, 
+      dan menukarkannya dengan berbagai reward menarik.</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Fitur Unggulan Kami</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <img src="pictures/Pria Membuang Sampah Plastik untuk Daur Ulang.png" alt="Setor Sampah">
+        <h4>Setor Sampah</h4>
+        <p>Menyetor sampah lebih cepat dan tercatat secara otomatis.</p>
+      </div>
+      <div class="feature-card">
+        <img src="pictures/Points dan Rewards.jpeg" alt="Tukar Poin">
+        <h4>Points & Rewards</h4>
+        <p>Kumpulkan poin dan tukarkan dengan voucher menarik.</p>
+      </div>
+      <div class="feature-card">
+        <img src="pictures/Leaderboard.jpeg" alt="Leaderboard">
+        <h4>Leaderboard</h4>
+        <p>Lihat siapa yang paling aktif dalam menyetorkan sampah minggu ini.</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- CTA -->
+<section class="cta" id="cta">
+  <h3>Ayo mulai setor sampahmu hari ini!</h3>
+  <button class="btn" id="openModal">Setor Sampah</button>
+</section>
+
+<!-- MODAL POPUP -->
+<div id="modalForm" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Form Setor Sampah</h3>
+    <form>
+      <label>Nama:</label>
+      <input type="text" placeholder="Masukkan nama kamu" required>
+      
+      <label>Jenis Sampah:</label>
+      <select required>
+        <option value="">Pilih jenis sampah</option>
+        <option>Plastik</option>
+        <option>Kertas</option>
+        <option>Logam</option>
+        <option>Kaca</option>
+      </select>
+      
+      <label>Berat Sampah (Kg):</label>
+      <input type="number" placeholder="Contoh: 2.5" step="0.1" required>
+      
+      <button type="submit" class="btn">Kirim</button>
+    </form>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="info">
+      <span>📧 <a href="mailto:support@banksampah.id">support@banksampah.id</a></span>
+      <span>📍 Jl. Hijau No.18, Palembang</span>
+      <span>📞 <a href="tel:+6281377545599">+62 813-7754-5599</a></span>
+    </div>
+    <p>© 2025 Bank Sampah Digital. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+    const modal = document.getElementById("modalForm");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.querySelector(".close");
+    const form = modal.querySelector("form"); 
+  
+    openBtn.onclick = () => {
+      modal.style.display = "flex";
+    };
+  
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); 
+      alert("Data setor sampah berhasil dikirim!");
+      modal.style.display = "none"; 
+      form.reset(); 
+    });
+  </script>
+</body>
+</html>
